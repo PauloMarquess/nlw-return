@@ -7,7 +7,7 @@ export const WidgetForm = () => {
                 <span className="text-xl leading-6">Deixe seu Feedback</span>
                 <CloseButton />
             </header>
-            <p>Hello World</p>
+            <div className="flex py-8 gap-2 w-full"></div>
             <footer className="text-xs text-neutral-400">
                 Feito com ♥ pela &nbsp;
                 <a
