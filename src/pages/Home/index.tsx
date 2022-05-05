@@ -1,5 +1,11 @@
+import { Widget } from '../../components/Widget';
+
 const Home = () => {
-    return <div>Home</div>;
+    return (
+        <div>
+            <Widget />
+        </div>
+    );
 };
 
 export default Home;

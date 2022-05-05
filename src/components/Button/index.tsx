@@ -1,15 +1,15 @@
 import { ReactNode } from 'react';
-import { ContainerButton } from './style';
 
 interface ButtonProps {
     children: ReactNode;
     onClick: () => void;
+    className: string;
 }
 
-export const Button = ({ children, onClick }: ButtonProps) => {
+export const Button = ({ children, onClick, className }: ButtonProps) => {
     return (
-        <ContainerButton>
-            <button onClick={onClick}>{children}</button>
-        </ContainerButton>
+        <button className={className} onClick={onClick}>
+            {children}
+        </button>
     );
 };
