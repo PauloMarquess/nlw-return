@@ -1,6 +1,8 @@
 import { ArrowLeft, Camera } from 'phosphor-react';
+import { useState } from 'react';
 import { FeedbackTypes, feedbackTypes } from '../../__mocks__';
 import { CloseButton } from '../CloseButton';
+import { ScreenshotButton } from '../WidgetForm/ScreenshotButton';
 
 interface FeedBackContentSteps {
   feedbackType: FeedbackTypes;
@@ -12,6 +14,7 @@ export const FeedBackContentSteps = ({
   onFeedbackRestartRequestd,
 }: FeedBackContentSteps) => {
   const feedbackTypeInfo = feedbackTypes[feedbackType];
+  const [screeshot, setScreenshot] = useState<string | null>(null);
   return (
     <>
       <header>
@@ -38,12 +41,10 @@ export const FeedBackContentSteps = ({
           placeholder="Conte com detalhes o que está acontecendo..."
         ></textarea>
         <footer className="flex gap-2 mt-2">
-          <button
-            type="button"
-            className="p-2 bg-zinc-800 border-transparent hover:bg-zinc-700 transition-colors focus:outline:none focus:ring-2 focus:ring-offset-2 focus:ring-offset-zinc-900 focus:ring-brand-500 "
-          >
-            <Camera className="w-6 h-6" />
-          </button>
+          <ScreenshotButton
+            screeshot={screeshot}
+            onScreenshot={setScreenshot}
+          />
           <button
             type="submit"
             className="p-2 bg-brand-500 rounded-md border-transparent flex-1 flex justify-center items-center focus:outline:none focus:ring-2 focus:ring-offset-2 focus:ring-offset-zinc-900 focus:ring-brand-500 transition-colors"
