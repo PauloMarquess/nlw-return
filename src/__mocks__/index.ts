@@ -24,4 +24,4 @@ export const feedbackTypes = {
   },
 };
 
-type FeedbackTypes = keyof typeof feedbackTypes;
+export type FeedbackTypes = keyof typeof feedbackTypes;
